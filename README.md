@@ -12,5 +12,5 @@ Interestingly, some of their plots do not accurately reflect the equations they 
 
 The program does not take any arguments. Simply open in MATLAB, and press `run`. The program will then output the various plots.
 
-![image info](./figures/Wrong_fill_volume.JPG)
+![image info](figures/Wrong_fill_volume.JPG)
 
