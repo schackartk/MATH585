@@ -1,21 +1,20 @@
 %   Kenneth Schackart
 %   schackartk@email.arizona.edu
-%   13 February 2019
+%   19 April 2019
 %   Modelling droplet formation in a T-Junction, an extension on the model
 %   given by Van Steijn
 
 % Key variables
-h_div_w = [0:0.05:0.5]; %Channel height divided by channel width, h/w
-flow_ratio = [0:1:10]; %Flow rate ratios. Disperse over continuous
-win_w = [1:0.1:3];     %Channel width ratios, inlet over main
+h_div_w = [0:0.05:0.5];        %Channel height divided by channel width, h/w
+flow_ratio = [0:1:10];         %Flow rate ratios. Disperse over continuous
+win_w = [1:0.1:3];             %Channel width ratios, inlet over main
+gutter_volumes = [0:0.05:0.5]; %Portion of continuous phase through gutter
+epsilon = [0:0.05:0.5];         %Corner roundness measure
 
-% Calculate volume(s) at end of filling
+% Calculate matrices
 fill_vols = filling(win_w,h_div_w); 
 
-% Calculate alpha(s)
 alpha = squeezing(h_div_w,win_w,0);
-
-% Calculate total volume(s)
 volumes = filling(win_w,1/3) + squeezing(1/3,win_w,0.3)*flow_ratio;
 
 % Generate plots
@@ -66,7 +65,6 @@ function plot_fill_volumes(h_div_w,win_w,fill_vols)
     zlabel('$\frac{V_{fill}}{hw^{2}}$','Interpreter','latex','FontSize',20)
     title('Dimensionless fill volume vs. $$\frac{h}{w}$$ and $$\frac{w_{in}}{w}$','Interpreter','latex','FontSize',14)
     colormap jet
-    colorbar
     drawnow
     hold off
 end
@@ -83,7 +81,6 @@ function plot_alphas(h_div_w,win_w,alpha)
     zlabel('$\alpha$','Interpreter','latex','FontSize',20)
     title('Squeezing coefficient, $$\alpha$$ vs. $$\frac{h}{w}$$ and $$\frac{w_{in}}{w}$','Interpreter','latex','FontSize',14)
     colormap cool
-    colorbar
     drawnow
     hold off
 end
@@ -98,7 +95,6 @@ function plot_volumes(flow_ratio,win_w,volumes)
     ylabel('$\frac{w_{in}}{w}$','Interpreter','latex','FontSize',20)
     zlabel('$\frac{V}{hw^2}$','Interpreter','latex','FontSize',20)
     title('Dimensionless volume vs. flow rate ratio, $$\frac{q_{d}}{q_{c}}$$ and $$\frac{w_{in}}{w}$','Interpreter','latex','FontSize',14)
-    colorbar
     drawnow
     hold off
 end
