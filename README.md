@@ -8,9 +8,28 @@ Interestingly, some of their plots do not accurately reflect the equations they 
 
 `T_Junction_model_improved.m` utilizes the same model presented in the Van Steijn paper, but with the plots presented as surfaces rather than 2D plots with different series.
 
-# Expected Behavior T
+# Expected Behavior `T_Junction_model`
 
 The program does not take any arguments. Simply open in MATLAB, and press `run`. The program will then output the various plots.
 
-![image info](figures/Wrong_fill_volume.JPG)
+![alt text](/figures/Wrong_fill_volume.jpg)
 
+![alt text](/figures/Right_fill_volume.jpg)
+
+![alt text](/figures/Squeezing_coefficient.jpg)
+
+![alt text](/figures/Dimensionless_volume.jpg)
+
+# Expected Behavior `T_Junction_model_improved`
+
+Simply open in MATLAB, and press `run`. The program will then output the various plots.
+
+![alt text](/figures/Fill_vol_surface_no_bar.jpg)
+
+![alt text](/figures/Squeezing_coefficient_no_bar.jpg)
+
+![alt text](/figures/Volume_surface_no_bar.jpg)
+
+# Author
+
+This code was written by Kenneth Schackart (schackartk@email.arizona.edu). It was written as a project for MATH585 at the University of Arizona. Course taken as first-year Ph.D. student in Biosystems Engineering.
