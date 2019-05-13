@@ -1,4 +1,4 @@
-# Modelling Droplet Formation in a Microfluidic T-Junction
+# Modeling Droplet Formation in a Microfluidic T-Junction
 These programs model the volume of droplets made in a microfluidic T-junction.
 
 
